@@ -385,7 +385,7 @@ class Scaffold extends Component
     private function makeFieldVolt($attribute, $dataType, $relationField, $selectDefinition)
     {
         $id = 'field' . Text::camelize($attribute);
-        $code = '<div class="form-group">' . PHP_EOL . "\t" . '<label for="' . $id .
+        $code = '<div class="form-group row">' . PHP_EOL . "\t" . '<label for="' . $id .
             '" class="col-sm-2 control-label">' . $this->getPossibleLabel($attribute) . '</label>' . PHP_EOL . "\t" .
             '<div class="col-sm-10">' . PHP_EOL;
 

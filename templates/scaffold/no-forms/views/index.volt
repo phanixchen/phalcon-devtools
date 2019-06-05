@@ -1,14 +1,22 @@
+<div class="bg-light clearfix">
+    <nav>
+        <div class="next float-right">{{ link_to(router.getControllerName() ~ "/new", "Create $plural$", "class": "btn btn-secondary") }}</div>
+    </nav>
+</div>
 <div class="page-header">
     <h1>
-        Search $plural$
+        {{viewName}} - Search $plural$
     </h1>
-    <p>
-        {{ link_to("$plural$/new", "Create $plural$") }}
-    </p>
 </div>
 
-{{ content() }}
 
+{{ content() }}
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event)
+{ 
+    
+});
+</script>
 {{ form("$plural$/search", "method":"post", "autocomplete" : "off", "class" : "form-horizontal") }}
 
 $captureFields$

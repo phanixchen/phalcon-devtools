@@ -160,7 +160,8 @@ class Model extends Component
         }
 
         if ($schema) {
-            $initialize['schema'] = $snippet->getThisMethod('setSchema', $schema);
+            //$initialize['schema'] = $snippet->getThisMethod('setSchema', $schema);
+            $initialize['schema'] = "        \$this->setSchema(\$this->config['database']->dbname);" . PHP_EOL;
         }
         $initialize['source'] = $snippet->getThisMethod('setSource', $this->modelOptions->getOption('name'));
 

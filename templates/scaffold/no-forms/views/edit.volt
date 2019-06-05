@@ -1,19 +1,21 @@
-<div class="row">
+<div class="bg-light clearfix">
     <nav>
-        <ul class="pager">
-            <li class="previous">{{ link_to("$plural$", "Go Back") }}</li>
-        </ul>
+        <div class="previous float-left">{{ link_to(router.getControllerName() ~ "/index", "Go Back", "class": "btn btn-secondary") }}</div>
     </nav>
 </div>
-
 <div class="page-header">
     <h1>
-        Edit $plural$
+        {{viewName}} - Edit $plural$
     </h1>
 </div>
 
 {{ content() }}
-
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event)
+{ 
+    
+});
+</script>
 {{ form("$plural$/save", "method":"post", "autocomplete" : "off", "class" : "form-horizontal") }}
 
 $captureFields$
