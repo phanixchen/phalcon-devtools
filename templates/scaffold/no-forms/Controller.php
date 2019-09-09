@@ -24,6 +24,25 @@ class $className$Controller extends ControllerBase
      */
     public function searchAction()
     {
+        /*
+        // Referer check
+        if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+        {
+            $protocol = 'https://';
+        }
+        else
+        {
+            $protocol = 'http://';
+        }
+
+        $url_prefix = $protocol. $this->request->getServer("HTTP_HOST") . $this->config->application->baseUri;
+
+        if ( strpos($this->request->getHeader('REFERER'), $url_prefix . $this->router->getControllerName() . "/ACTIONNAME") === false )
+        {
+            $this->flash->error("not valid");
+            return;
+        }
+        */
         $numberPage = 1;
         if ($this->request->isPost()) {
             $query = Criteria::fromInput($this->di, '$fullyQualifiedModelName$', $_POST);
@@ -169,6 +188,25 @@ class $className$Controller extends ControllerBase
 
             return;
         }
+        /*
+        // Referer check
+        if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+        {
+            $protocol = 'https://';
+        }
+        else
+        {
+            $protocol = 'http://';
+        }
+
+        $url_prefix = $protocol. $this->request->getServer("HTTP_HOST") . $this->config->application->baseUri;
+
+        if ( strpos($this->request->getHeader('REFERER'), $url_prefix . $this->router->getControllerName() . "/ACTIONNAME") === false )
+        {
+            $this->flash->error("not valid");
+            return;
+        }
+        */
 
         $singularVar$ = new $className$();
         $assignInputFromRequestCreate$
@@ -248,6 +286,26 @@ class $className$Controller extends ControllerBase
 
             return;
         }
+
+        /*
+        // Referer check
+        if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')
+        {
+            $protocol = 'https://';
+        }
+        else
+        {
+            $protocol = 'http://';
+        }
+
+        $url_prefix = $protocol. $this->request->getServer("HTTP_HOST") . $this->config->application->baseUri;
+
+        if ( strpos($this->request->getHeader('REFERER'), $url_prefix . $this->router->getControllerName() . "/ACTIONNAME") === false )
+        {
+            $this->flash->error("not valid");
+            return;
+        }
+        */
 
         $pkVar$ = $this->request->getPost("$pk$");
         $singularVar$ = $className$::findFirstBy$pk$($pkVar$);
