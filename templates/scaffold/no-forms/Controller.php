@@ -157,7 +157,13 @@ class $className$Controller extends ControllerBase
     {
         if (!$this->request->isPost()) {
 
-            $singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+            //$singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+            $singularVar$ = $className$::findFirst([
+                "conditions" => "$pk$ = ?1",
+                "bind" => [
+                    1 => $pkVar$
+                ]
+            ]);
             if (!$singularVar$) {
                 $this->flash->error("$singular$ was not found");
 
@@ -256,7 +262,13 @@ class $className$Controller extends ControllerBase
         }
         */
         $pkVar$ = $this->request->getPost("$pk$");
-        $singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        //$singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        $singularVar$ = $className$::findFirst([
+            "conditions" => "$pk$ = ?1",
+            "bind" => [
+                1 => $pkVar$
+            ]
+        ]);
         if (!$singularVar$)
         {
             $singularVar$ = new $className$();
@@ -308,7 +320,13 @@ class $className$Controller extends ControllerBase
         */
 
         $pkVar$ = $this->request->getPost("$pk$");
-        $singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        //$singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        $singularVar$ = $className$::findFirst([
+            "conditions" => "$pk$ = ?1",
+            "bind" => [
+                1 => $pkVar$
+            ]
+        ]);
 
         if (!$singularVar$) {
             $this->flash->error("$singular$ does not exist " . $pkVar$);
@@ -372,7 +390,13 @@ class $className$Controller extends ControllerBase
         */
 
         $pkVar$ = $this->request->getPost("$pk$");
-        $singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        //$singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        $singularVar$ = $className$::findFirst([
+            "conditions" => "$pk$ = ?1",
+            "bind" => [
+                1 => $pkVar$
+            ]
+        ]);
 
         if (!$singularVar$) {
             $this->http404('updating item');
@@ -394,7 +418,13 @@ class $className$Controller extends ControllerBase
      */
     public function deleteAction($pkVar$)
     {
-        $singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        //$singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        $singularVar$ = $className$::findFirst([
+            "conditions" => "$pk$ = ?1",
+            "bind" => [
+                1 => $pkVar$
+            ]
+        ]);
         if (!$singularVar$) {
             $this->flash->error("$singular$ was not found");
 
@@ -455,7 +485,13 @@ class $className$Controller extends ControllerBase
         }
         */
 
-        $singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        //$singularVar$ = $className$::findFirstBy$pk$($pkVar$);
+        $singularVar$ = $className$::findFirst([
+            "conditions" => "$pk$ = ?1",
+            "bind" => [
+                1 => $pkVar$
+            ]
+        ]);
         if (!$singularVar$) {
             return $this->http404('delete target');
         }
